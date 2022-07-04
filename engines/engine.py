@@ -1,9 +1,11 @@
 # -*-coding : utf-8 -*-
 
+from abc import ABC
+
 # engines
 
-class Engine :
+class Engine (ABC) :
     
-    def needs_service() :
+    def needs_service(self) :
         
         return bool()
