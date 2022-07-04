@@ -11,7 +11,7 @@ from batteries.spindlerbattery import SpindlerBattery
 from batteries.nubbinbattery import NubbinBattery
 
 from tires.carrigantire import CarriganTire
-from tire.octoprimetire import OctoprimeTire
+from tires.octoprimetire import OctoprimeTire
 
 # Capulet engine class test
 class CapuletEngineTest(TestCase):
@@ -68,8 +68,8 @@ class NubbinBatteryTest(TestCase):
 class CarriganTireTest(TestCase):
     
     def setUp(self):
-        self.first_carrigan = CarriganTire([0,0,0,0])
-        self.second_carrigan = CarriganTire([1,1,0,0])
+        self.first_carrigan = CarriganTire(0,0,0,0)
+        self.second_carrigan = CarriganTire(1,1,0,0)
     
     def test_needs_service(self):
         self.assertFalse(self.first_carrigan.needs_service())
@@ -78,8 +78,8 @@ class CarriganTireTest(TestCase):
 class OctoprimeTireTest (TestCase):
     
     def setUp(self):
-        self.first_octoprime = OctoprimeTire([0,0,0,0])
-        self.second_octoprime = OctoprimeTire([1,1,1,1])
+        self.first_octoprime = OctoprimeTire(0,0,0,0)
+        self.second_octoprime = OctoprimeTire(1,1,1,1)
     
     def test_needs_service(self):
         self.assertFalse(self.first_octoprime.needs_service())
