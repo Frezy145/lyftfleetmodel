@@ -10,6 +10,9 @@ from engines.stermanengine import StermanEngine
 from batteries.spindlerbattery import SpindlerBattery
 from batteries.nubbinbattery import NubbinBattery
 
+from tires.carrigantire import CarriganTire
+from tires.octoprimetire import OctoprimeTire
+
 # Capulet engine class test
 class CapuletEngineTest(TestCase):
     
@@ -45,7 +48,7 @@ class SpindlerBatteryTest(TestCase):
     
     def setUp(self):
         self.first_spindler = SpindlerBattery(date(2020, 10, 4), date(2022, 7, 4))
-        self.second_spindler = SpindlerBattery(date(2019, 7, 4), date(2022, 7, 4))
+        self.second_spindler = SpindlerBattery(date(2018, 7, 4), date(2022, 7, 4))
     
     def test_needs_service (self):
         self.assertFalse(self.first_spindler.needs_service())
@@ -61,6 +64,26 @@ class NubbinBatteryTest(TestCase):
     def test_needs_service (self):
         self.assertFalse(self.first_nubbin.needs_service())
         self.assertTrue(self.second_nubbin.needs_service())
+
+class CarriganTireTest(TestCase):
+    
+    def setUp(self):
+        self.first_carrigan = CarriganTire(0,0,0,0)
+        self.second_carrigan = CarriganTire(1,1,0,0)
+    
+    def test_needs_service(self):
+        self.assertFalse(self.first_carrigan.needs_service())
+        self.assertTrue(self.second_carrigan.needs_service())
+
+class OctoprimeTireTest (TestCase):
+    
+    def setUp(self):
+        self.first_octoprime = OctoprimeTire(0,0,0,0)
+        self.second_octoprime = OctoprimeTire(1,1,1,1)
+    
+    def test_needs_service(self):
+        self.assertFalse(self.first_octoprime.needs_service())
+        self.assertTrue(self.second_octoprime.needs_service())
 
 if __name__ == '__main__':
     main()

@@ -14,7 +14,7 @@ class SpindlerBattery (Battery) :
         # assume dates are in datetime.date type
         # duration will be timedelta type
         duration = self._current_date.today() - self._last_service_date
-        if duration.days >= 2*365 : #assume 1 year = 365 days
+        if duration.days >= 3*365 : #assume 1 year = 365 days
             return True
         else :
             return False
