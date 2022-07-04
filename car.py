@@ -10,6 +10,6 @@ class Car (Serviceable) :
         self._engine = engine
         self._battery = battery
         
-    def needs_service():
+    def needs_service(self):
         self._engine.needs_service()
         self._battery.needs_service()
